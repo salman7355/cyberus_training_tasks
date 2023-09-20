@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="/static/favicon/flask.jpg" />
+    <title>homePage</title>
+  </head>
+  <body>
+    <div class="flex flex-col bg-black text-white h-screen pt-48">
+      <h1 class="text-5xl font-bold text-center">Welcome, {{name}}</h1>
+      <div
+        class="w-1/2 p-10 text-center md:flex-row flex-col flex justify-between mx-auto"
+      >
+        <a href="/logout">
+          <button
+            class="rounded-2xl border-2 w-52 h-12 mx-auto font-bold text-white text-xl mt-6 hover:bg-white hover:text-black"
+          >
+            Logout
+          </button>
+        </a>
+        <a href="/gadgets">
+          <button
+            class="rounded-2xl border-2 w-52 h-12 mx-auto font-bold text-white text-xl mt-6 hover:bg-white hover:text-black"
+          >
+            My Gadgets
+          </button>
+        </a>
+        <a href="/allGadgets">
+          <button
+            class="rounded-2xl border-2 w-52 h-12 mx-auto font-bold text-white text-xl mt-6 hover:bg-white hover:text-black"
+          >
+            All Gadgets
+          </button>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

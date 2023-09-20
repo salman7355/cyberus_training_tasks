@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/main.css" />
+    <link rel="icon" type="image/x-icon" href="/static/favicon/flask.jpg" />
+    <title>Gadgets</title>
+  </head>
+  <body>
+    <div
+      class="flex justify-between w-full items-center bg-black shadow-xl shadow-slate-500 h-20 text-white p-10 font-bold text-xl"
+    >
+      <div>Gadgets</div>
+      <div>
+        <a href="/login">
+          <button
+            class="border-white border-2 p-2 rounded-2xl hover:shadow-md hover:shadow-slate-100 px-5 hover:bg-blue-800"
+          >
+            Logout
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <!-- all Gadgets -->
+    <div
+      class="flex flex-wrap w-full mt-10 justify-center md:justify-start ps-5 gap-6 h-44"
+      id="getGadgets"
+    >
+      {% for gadget in Gadgets %}
+      <div
+        class="bg-gray-600 h-[15rem] flex w-[30rem] text-xl text-white font-bold rounded-2xl"
+      >
+        <div class="">
+          <img
+            src="{{gadget[4]}}"
+            alt="/"
+            class="h-full object-cover rounded-s-2xl w-[25rem]"
+          />
+        </div>
+        <div class="flex w-full flex-col p-6 justify-between gap-5">
+          <div>
+            <p>{{gadget[1]}}</p>
+            <p>{{gadget[2]}}</p>
+            <p>{{gadget[3]}}$</p>
+          </div>
+          <a
+            class="flex p-2 bg-blue-950 w-fit ms-auto rounded-lg px-4 justify-end"
+            href="{{url_for('gadgetid' , id=gadget[0])}}"
+          >
+            View
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <script type="text/javascript" src="/static/js/delete.js"></script>
+  </body>
+</html>
